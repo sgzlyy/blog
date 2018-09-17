@@ -38,8 +38,8 @@ public class BlogApplicationTests {
      */
     @Test
     public void testRedis() {
-        redisUtil.set("123","测试数据");
+        redisUtil.set("666","测试数据666");
 
-        System.out.println(redisUtil.get("123"));
+        System.out.println(redisUtil.get("666"));
     }
 }
