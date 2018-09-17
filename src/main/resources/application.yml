@@ -4,3 +4,8 @@ spring:
     url: jdbc:mysql://localhost:3306/blog
     username: root
     password: root
+  redis:
+    sentinel:
+      master: mymaster
+      nodes: 45.32.135.42:26379,45.32.135.42:26380,45.32.135.42:26381
+    timeout: 5000ms

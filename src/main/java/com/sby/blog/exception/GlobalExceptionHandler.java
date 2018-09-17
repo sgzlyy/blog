@@ -4,6 +4,7 @@ package com.sby.blog.exception;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -30,12 +31,12 @@ public class GlobalExceptionHandler {
         return mav;
     }
 
-//    @ExceptionHandler(value = MyException.class)
-//    @ResponseBody
-//    public R jsonErrorHandler(HttpServletRequest req, MyException e) throws Exception {
-//
-//        //TODO 错误日志处理
-//
-//        return R.fail(e.getMessage(), "some data");
-//    }
+    @ExceptionHandler(value = MyException.class)
+    @ResponseBody
+    public R jsonErrorHandler(HttpServletRequest req, MyException e) throws Exception {
+
+        //TODO 错误日志处理
+
+        return R.fail(e.getMessage(), "some data");
+    }
 }
